@@ -4,7 +4,7 @@ class Spaceship {
       this.y = y;
       this.width = 100;
       this.height = 150;
-      this.speed = 0.2;
+      this.speed = 0.35;
       this.image = new Image();
       this.image.src = 'spaceship.png'; // Use your spaceship image path
     }
