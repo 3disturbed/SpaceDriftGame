@@ -1,0 +1,62 @@
+body, html {
+    margin: 0;
+    padding: 0;
+ 
+    background-image: url('logo.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+
+  }
+  canvas {
+    display: block;
+    width: 100vw;
+    height: 98vh;
+
+  }
+  button {
+    top:80vh;
+    background-color: black;
+    color: white;
+    border: gray 3px solid;
+    border-radius: 20px;
+    position: absolute;
+    padding: 10px 20px;
+    font-size: 2vw;
+    cursor: pointer;
+    height: 10vh;   
+    width: 20vw;
+    opacity: 0.5;
+  }
+  #tiltModeButton {
+    
+    left:20vw;
+
+  }
+  #fingerModeButton {
+
+    left:40vw;
+
+  }
+  #mouseModeButton {
+
+    left: 60vw;
+
+
+  }
+  #highScore {
+    display: flex;
+    font: 2vh Arial;
+
+    top: 75vh;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: white;
+    align-items: center;
+    justify-content: center;
+  }
+  

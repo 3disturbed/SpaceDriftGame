@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Drift</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+   <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = gameCanvas.getContext('2d');
+   </script>
+  <!-- Control Mode Buttons -->
+  <button id="tiltModeButton">Tilt Mode</button>
+  <button id="fingerModeButton">Finger Mode</button>
+  <button id="mouseModeButton">Mouse Mode</button>
+   <div id="highScore">Score: 0</div>
+   <script src="AstronautCollectible.js"></script>
+  <script src="spaceship.js"></script>
+  <script src="asteroid.js"></script>
+  <script src="powerups.js"></script>
+  <script src="starfield.js"></script>
+  <script src="game.js"></script>
+  <script src="ui.js"></script>
+
+</body>
+</html>
