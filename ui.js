@@ -92,17 +92,17 @@ function removeMouseListeners() {
 
 // Touch Listeners for Finger Mode
 function setupTouchListeners() {
-  canvas.addEventListener('touchstart', startDragging);
-  canvas.addEventListener('touchmove', handleMouseMove);
-  canvas.addEventListener('touchend', stopDragging);
-}
-
-function removeTouchListeners() {
-  canvas.removeEventListener('touchstart', startDragging);
-  canvas.removeEventListener('touchmove', handleMouseMove);
-  canvas.removeEventListener('touchend', stopDragging);
-}
-
+    canvas.addEventListener('touchstart', startDragging);
+    canvas.addEventListener('touchmove', handleTouchMove); // Use a separate function for touch
+    canvas.addEventListener('touchend', stopDragging);
+  }
+  
+  function removeTouchListeners() {
+    canvas.removeEventListener('touchstart', startDragging);
+    canvas.removeEventListener('touchmove', handleTouchMove);
+    canvas.removeEventListener('touchend', stopDragging);
+  }
+  
 // Handle dragging state for mouse or touch
 function startDragging(event) {
   isDragging = true;
@@ -124,7 +124,7 @@ function handleOrientation(event) {
 
 // Handle movements for Finger and Mouse Modes
 function handleMouseMove(event) {
-  if (gameMode !== "tilt" && isDragging) {
+  if (gameMode === "mouse" && isDragging) {
     const rect = canvas.getBoundingClientRect();
     const mouseX = event.clientX - rect.left;
     const mouseY = event.clientY - rect.top;
@@ -134,3 +134,16 @@ function handleMouseMove(event) {
     game.tiltY = ((mouseY / (canvas.height / 2)) - 0.5) * 40; // Simulate beta: -20 to 20
   }
 }
+// Separate function to handle touch move for Finger Mode
+function handleTouchMove(event) {
+    if (gameMode === "finger" && isDragging) {
+      const touch = event.touches[0]; // Use the first touch point
+      const rect = canvas.getBoundingClientRect();
+      const touchX = touch.clientX - rect.left;
+      const touchY = touch.clientY - rect.top;
+  
+      // Map touchX to gamma (tiltX) and touchY to beta (tiltY) ranges
+      game.tiltX = ((touchX / (canvas.width / 2)) - 0.5) * 40; // Simulate gamma: -20 to 20
+      game.tiltY = ((touchY / (canvas.height / 2)) - 0.5) * 40; // Simulate beta: -20 to 20
+    }
+  }
