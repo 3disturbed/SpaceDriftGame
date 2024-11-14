@@ -1,0 +1,8 @@
+{
+  "name": "Space Drift",
+  "icon": "https://3disturbed.github.io/SpaceDriftGame/Icon.png",
+  "link": "https://3disturbed.github.io/SpaceDriftGame/",
+  "repo": "https://github.com/3disturbed/SpaceDriftGame",
+  "type": "game",
+  "target": "frame"
+}
